@@ -1,5 +1,4 @@
 Data_Item           Item_Description                                             
-DISTRICT_CODE       Bezirkscode
 DISTRICT_POP_RATIO  Anteil der Gesamtbevölkerung
 POP_DENSITY         Bevölkerungsdichte
 RATE_M              Anteil männlich
