@@ -8,18 +8,90 @@ var wmsLayer = new ol.layer.Image({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
     params: {'LAYERS': 'g04_2015:wien_normalized'}
   }),
-  opacity: 0.5
+  opacity: 0.6,
+});
+
+
+// Layer
+var ubahn = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g04_2015:UBAHN_linien,g04_2015:UBAHN_haltestellen'}
+  }),
+});
+
+var fahrradabstellanlagen = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g04_2015:fahrradabstellanlagen'}
+  }),
+});
+
+var CITYBIKE_stationen = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g04_2015:CITYBIKE_stationen'}
+  }),
+});
+
+var haltestellen_bus_strassenbahn = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g04_2015:haltestellen_bus_strassenbahn'}
+  }),
+});
+
+var SBAHN = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g04_2015:SBAHN_linien,g04_2015:SBAHN_haltestellen'}
+  }),
+});
+
+var einzugsber_sbahn_1000m = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g04_2015:einzugsber_sbahn_1000m'}
+  }),
+});
+
+var einzugsber_ubahn = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g04_2015:einzugsber_ubahn'}
+  }),
+});
+
+var bezirksgrenzen = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g04_2015:bezirksgrenzen_wien'}
+  }),
+});
+
+var fussgeherzonen = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g04_2015:fusgeherzonen'}
+  }),
+});
+
+var verkehrsnutzung = new ol.layer.Image({
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g04_2015:flaechen_verkehrsnutzung'}
+  }),
 });
 
 
 // Map object
-var map = new ol.Map({
+var olMap = new ol.Map({
   target: 'map',
   renderer: 'canvas',
-  layers: [osmLayer, wmsLayer],
+  layers: [osmLayer],
   view: new ol.View({
     center: ol.proj.transform([16.4, 48.2], 'EPSG:4326', 'EPSG:3857'),
-    zoom: 11,
+    zoom: 10.8,
     maxZoom: 18
   })
 });
@@ -33,26 +105,24 @@ $.get(function(response) {
       .html(line.substr(20, 105).trim()));
   });
 });
-
 // Add behaviour to dropdown
-
 $('#topics').change(function() {
   wmsLayer.getSource().updateParams({
     'viewparams': 'column:' + $('#topics>option:selected').val()
   });
 });
 
-
 $('#topics').change(function() {
        var selected_index = document.getElementById('topics').selectedIndex;
        console.log(selected_index);
        if(selected_index== -1 || selected_index == 0){
-       	map.removeLayer(wmsLayer);
+       	olMap.removeLayer(wmsLayer);
        } else {
-       	map.removeLayer(wmsLayer);
-       	map.addLayer(wmsLayer);
+       	olMap.removeLayer(wmsLayer);
+       	olMap.addLayer(wmsLayer);
        }
        });
+
 
 
 // Create an ol.Overlay with a popup anchored to the map
@@ -118,5 +188,138 @@ form.onsubmit = function(evt) {
 };
 
 
+// Integration der Checkbox-Funktionalitäten
+
+
+
+document.getElementById('ubahn').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(ubahn);
+    console.log("Added ubahn");
+  }
+  else
+  {
+    olMap.removeLayer(ubahn);
+    console.log("Removed ubahn");
+  }
+};
+
+document.getElementById('fahrradabstellanlagen').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(fahrradabstellanlagen);
+    console.log("Added fahrradabstellanlagen");
+  }
+  else
+  {
+    olMap.removeLayer(fahrradabstellanlagen);
+    console.log("Removed fahrradabstellanlagen");
+  }
+};
+
+document.getElementById('CITYBIKE_stationen').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(CITYBIKE_stationen);
+    console.log("Added CITYBIKE_stationen");
+  }
+  else
+  {
+    olMap.removeLayer(CITYBIKE_stationen);
+    console.log("Removed CITYBIKE_stationen");
+  }
+};
+
+document.getElementById('haltestellen_bus_strassenbahn').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(haltestellen_bus_strassenbahn);
+    console.log("Added haltestellen_bus_strassenbahn");
+  }
+  else
+  {
+    olMap.removeLayer(haltestellen_bus_strassenbahn);
+    console.log("Removed haltestellen_bus_strassenbahn");
+  }
+};
+
+document.getElementById('SBAHN').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(SBAHN);
+    console.log("Added SBAHN");
+  }
+  else
+  {
+    olMap.removeLayer(SBAHN);
+    console.log("Removed SBAHN");
+  }
+};
+
+document.getElementById('einzugsber_sbahn_1000m').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(einzugsber_sbahn_1000m);
+    console.log("Added einzugsber_sbahn_1000m");
+  }
+  else
+  {
+    olMap.removeLayer(einzugsber_sbahn_1000m);
+    console.log("Removed einzugsber_sbahn_1000m");
+  }
+};
+
+document.getElementById('einzugsber_ubahn').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(einzugsber_ubahn);
+    console.log("Added einzugsber_ubahn");
+  }
+  else
+  {
+    olMap.removeLayer(einzugsber_ubahn);
+    console.log("Removed einzugsber_ubahn");
+  }
+};
+
+document.getElementById('bezirksgrenzen').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(bezirksgrenzen);
+    console.log("Added bezirksgrenzen_wien");
+  }
+  else
+  {
+    olMap.removeLayer(bezirksgrenzen);
+    console.log("Removed bezirksgrenzen_wien");
+  }
+};
+
+document.getElementById('fussgeherzone').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(fussgeherzonen);
+    console.log("Added fussgeherzone");
+  }
+  else
+  {
+    olMap.removeLayer(fussgeherzonen);
+    console.log("Removed fussgeherzone");
+  }
+};
+
+document.getElementById('verkehrsflaeche').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(verkehrsnutzung);
+    console.log("Added verkehrsflache");
+  }
+  else
+  {
+    olMap.removeLayer(verkehrsnutzung);
+    console.log("Removed verkehrsflache");
+  }
+};
 
 
