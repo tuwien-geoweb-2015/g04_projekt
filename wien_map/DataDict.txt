@@ -1,5 +1,6 @@
 Data_Item               Item_Description
 
+LEER                ---Kein Layer---
 DISTRICT_POP_RATIO  Anteil der Gesamtbevölkerung
 POP_DENSITY         Bevölkerungsdichte
 RATE_M              Anteil männlich

@@ -1,0 +1,71 @@
+ html, body, #map {
+        
+         height: 100%;
+      }
+      #map {
+      padding-top: 6px;
+          
+          
+      }
+      .legend {
+        position: absolute;
+        z-index: 1;
+        left: 20px;
+        bottom: 150px;
+        opacity: 0.6;
+    }
+    .popover {
+      max-width: 440px;
+    }
+    .popover-title {
+      float: right;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
+    .popover-content iframe {
+      width: 400px;
+      height: 120px;
+      border: 0;
+    }
+        #checkbox1 {
+            
+            color: white;
+
+        }
+        
+        .navbar-brand {
+            
+            padding-top: 20px;
+        }
+
+        .col-md-4 {
+            
+            padding-top: 10px;
+        }
+
+
+
+#content1 {
+    border-top: solid 1px 
+    
+}
+
+
+
+
+.content2 h4{
+    font-size: 12px;
+    font-weight: bold;
+  
+}
+
+.content2 {
+    border-left: solid 1px;
+    padding-left: 10px;
+}
+
+.maptext {
+    padding-left: 30px;
+    padding-top: 20px;
+}

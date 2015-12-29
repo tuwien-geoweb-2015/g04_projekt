@@ -8,53 +8,42 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../geoweb_projekt/bootstrap.css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <!-- OpenLayers -->
     <link rel="stylesheet" href="http://openlayers.org/en/v3.11.1/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="./css_stylesheet_wien.css" type="text/css"> 
     <script src="http://openlayers.org/en/v3.11.1/build/ol.js" type="text/javascript"></script>
     <!-- Our Application -->
     <style>
-      html, body, #map {
-        height: 100%;
-      }
-      #map {
-        padding-top: 50px;
-      }
-      .legend {
-        position: absolute;
-        z-index: 1;
-        left: 10px;
-        bottom: 10px;
-        opacity: 0.6;
-    }
-    .popover {
-      max-width: 440px;
-    }
-    .popover-title {
-      float: right;
-      background: none;
-      border: 0;
-      cursor: pointer;
-    }
-    .popover-content iframe {
-      width: 400px;
-      height: 120px;
-      border: 0;
-    }
-
+     
      
     </style>
   </head>
   <body>
+      <div class="navbar">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Erreichbarkeitsanaylse</a>
       </div>
       <form id="navform" class="navbar-form navbar-right">
         <div class="form-group">
-          <select id="topics" class="form-control"></select>
+          <select id="topics" class="form-control">
+            <option value="DISTRICT_POP_RATIO">---Kein Layer---</option>
+            <option value="DISTRICT_POP_RATIO">Anteil der Gesamtbevölkerung</option>
+            <option value="POP_DENSITY">Bevölkerungsdichte</option>
+            <option value="RATE_M">Anteil männlich</option>
+            <option value="RATE_F">Anteil weiblich</option>
+            <option value="RATE_FOR_NATIONAL">Anteil fremder Staatsbürger</option>
+            <option value="RATE_FOR_BORN">Anteil fremdes Geburtsland</option>
+            <option value="RATE_MIG_BACKGROUND">Anteil Migrationshintergrund</option>
+            <option value="YOUTH_RATIO">Anteil Jugendlicher unter 19 </option>
+            <option value="ADULT_RATIO">Anteil erwerbsfähiger Erwachsener 20 bis 64</option>
+            <option value="AGE_RATIO">Anteil Senioren über 65</option>
+            </select>    
         </div>
-        <div class="input-group">
+       
+<div class="input-group">
   <input type="text" class="form-control" name="query">
   <span class="input-group-btn">
     <button class="btn btn-default" type="submit">
@@ -64,7 +53,10 @@
 </div>
       </form>
     </nav>
-
+</div>
+      
+<div class="row">
+ <div class="col-xs-12 col-sm-6 col-md-8 pull-left">
     <div id="map">
       <!-- GetLegendGraphic, customized with some LEGEND_OPTIONS -->
       <img class="legend img-rounded" src="http://student.ifip.tuwien.ac.at/geoserver/g04_2015/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=g04_2015_stddev">
@@ -82,6 +74,108 @@
            </div>
     </div>
      
-    <script charset="utf-8" type="text/javascript" src="censusmap.js"></script>
+      <div class="maptext">
+    <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. 
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+        </p>
+    
+    </div>
+</div>
+   
+    
+<div class="col-xs-6 col-md-4 pull-right">
+    <!-- Checkboxes to choose your overlay / for Bezirksgrenzen replaced with buttons -->
+   <div class="content2">
+    <form class="checkbox">
+     <div class="form-group">
+         
+        <div class="checkbox"><label><input type="checkbox" id="bezirksgrenzen">Bezirksgrenzen Wien</label></div>
+
+        <h4>Points of interest</h4>
+        
+        <div class="checkbox"><label><input type="checkbox" id="fahrradabstellanlagen"><img src="http://student.ifip.tuwien.ac.at/geoweb/2015/g04/homepage/images/piktogramme/fahrradabstellanlagen.png"></img> Fahrradabstellplätze</label></div>
+        
+        <div class="checkbox"><label><input type="checkbox" id="CITYBIKE_stationen"><img src="http://student.ifip.tuwien.ac.at/geoweb/2015/g04/homepage/images/piktogramme/CITYBIKE_stationen.png"></img> Citybike Stationen</label></div>
+        
+        <div class="checkbox"><label><input type="checkbox" id="haltestellen_bus_strassenbahn"><img src="http://student.ifip.tuwien.ac.at/geoweb/2015/g04/homepage/images/piktogramme/haltestellen_bus_strassenbahn.png"></img> Haltestellen - Bus und Straßenbahn</label></div>
+        
+        <div class="checkbox"><label><input type="checkbox" id="ubahn"><img src="http://student.ifip.tuwien.ac.at/geoweb/2015/g04/homepage/images/piktogramme/UBAHN.png"></img> U-Bahn Haltestellen und Linien</label></div>
+    
+        <div class="checkbox"><label><input type="checkbox" id="SBAHN"><img src="http://student.ifip.tuwien.ac.at/geoweb/2015/g04/homepage/images/piktogramme/SBAHN.png"></img> S-Bahn Haltestellen und Linien</label></div>
+    
+    
+    <h4>Erreichbarkeit von U-Bahn und S-Bahn</h4>
+
+<div class="checkbox">
+    <label>
+        <input type="checkbox" id="einzugsber_ubahn">Einzugsbereich U-Bahn 
+        <a data-toggle="collapse" href="#ez_ubahn" aria-expanded="false" aria-controls="false"><br>
+            <small>
+                <strong>Legende </strong>
+            </small>
+        </a>
+    </label>
+    </br>
+</div>  
+<div class="collapse" id="ez_ubahn" aria-expanded="false">
+    <div background-color="#FFFFFF">
+        <small>
+            <em>
+            Diser Kartenlayer zeigt den Einzugsbereich der jeweiligen U-Bahn Station an. (Radius des Einzugsbereichs beträgt 500m)
+            </em>  
+        </small>
+    </div>
+</div>
+
+<div class="checkbox">
+    <label>
+        <input type="checkbox" id="einzugsber_sbahn_1000m">Einzugsbereich S-Bahn 
+        <a data-toggle="collapse" href="#ez_sbahn_1000m" aria-expanded="false" aria-controls="false"><br>
+            <small>
+                <strong>Legende </strong>
+            </small>
+        </a>
+    </label>
+    </br>
+</div>
+
+<div class="collapse" id="ez_sbahn_1000m" aria-expanded="false">
+    <div background-color="#FFFFFF">
+        <small>
+            <em>
+            Diser Kartenlayer zeigt den Einzugsbereich der jeweiligen S-Bahn Station an. (Radius des Einzugsbereichs beträgt 1000m)
+            </em>  
+        </small>
+    </div>
+</div>
+
+<h4>Verkehr- und Fl&auml;chennutzung</h4>
+
+        <div class="checkbox"><label><input type="checkbox" id="fussgeherzone"><img src="http://student.ifip.tuwien.ac.at/geoweb/2015/g04/homepage/images/piktogramme/fussgaengerzone.png"></img> Fußgängerzonen</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="verkehrsflaeche"><img src="http://student.ifip.tuwien.ac.at/geoweb/2015/g04/homepage/images/piktogramme/verkehrsflaeche.png"></img> Gesamte Fläche der Verkehrsnutzung</label></div>
+
+</div>
+<div id="content1">      
+
+<div class="checkbox"><label><input type="checkbox" id="comment"> Feedback Kommentare</label></div>
+
+
+
+</form>
+
+<form id="geolocation">
+ 	<button type="button" name="Location" value="Current location" onclick="JavaScript:geolocate();">
+    <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Geolocation</button>
+    
+  </form>
+
+</div> 
+
+
+    
+ </div>    
+      <script charset="utf-8" type="text/javascript" src="censusmap.js"></script>
   </body>
 </html>
