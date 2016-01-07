@@ -1,0 +1,6 @@
+# .htaccess-Datei fuer Web-Verzeichnis geoweb/2015/g04/intranet
+AuthType Basic
+AuthName "geoweb.m10 - student g04 - Login"
+AuthUserFile /scratch/users/geoweb2015/htdocs/g04/intranet/.htpasswd
+AuthGroupFile /dev/null
+require user geoweb2015 matt dominik lisa

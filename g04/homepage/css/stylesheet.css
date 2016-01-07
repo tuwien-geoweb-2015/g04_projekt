@@ -1,0 +1,133 @@
+* {
+ text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);;
+}
+
+
+html, body {
+    height: 100%;
+    font-family: 'helvetica', 'arial', sans-serif;
+}
+
+.nav {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 3;
+  background-color: #f1f1f1;
+}
+
+.nav a {
+  color: #5a5a5a;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+.nav li {
+  display: inline;
+}
+
+/* dropdown menu */
+
+.nav ul {
+    position: relative;
+   
+}
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul li a, visited {
+ 
+    display: block;
+}
+.nav ul li:hover ul {
+    display: block;
+}
+.nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+  
+    
+}
+
+/* dropdown menu */
+
+.jumbotron {
+  background-image: url("../images/amst3.jpg");
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron .container {
+  position: relative;
+    background-color: #f1f1f1;
+    border-style: solid;
+    border-width: 4px;
+        border-color: #f1f1f1;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: #333333;
+  font-size: 48px;  
+  font-weight: bolder;
+}
+
+.jumbotron p {
+  font-size: 20px;
+  color: #333333;
+    font-weight: */bold**;
+}
+
+.learn-more {
+  background-color: none;
+}
+
+.learn-more h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.learn-more a {
+  color: steelblue;
+}
+
+.neighborhood-guides {
+    background-color: none;
+    border-bottom: 1px solid #dbdbdb;
+    border-top: 1px solid #dbdbdb;
+    text
+}
+    
+.neighborhood-guides h2 {
+    color: #393c3d;
+    font-size: 24px;
+    
+    } 
+.neighborhood-guides p {
+    font-size: 15px;
+    margin-bottom: 13px;
+    
+    }    
+    
+.neighborhood-guides img {
+    
+    height:200px;
+    width:200px;
+    
+    }
+
+
+#TU-Logo {
+    padding-bottom: 40px;
+}
+
+#footer-sig {
+    padding-top: 80px;
+}
+
+

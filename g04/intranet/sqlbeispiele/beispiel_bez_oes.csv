@@ -1,0 +1,118 @@
+Bezirk_Id;Bezirk;Land_Id;Einw_2001;Einw_2011
+101;Eisenstadt (Stadt);1;11332;13101
+102;Rust (Stadt);1;1714;1896
+103;Eisenstadt-Umgebung;1;38751;40936
+104;Güssing;1;27193;26624
+105;Jennersdorf;1;17934;17573
+106;Mattersburg;1;37445;39050
+107;Neusiedel am See;1;51726;55337
+108;Oberpullendorf;1;38092;37583
+109;Oberwart;1;53371;53585
+201;Klagenfurt (Stadt);2;90145;94483
+202;Villach (Stadt);2;57492;59324
+203;Hermagor;2;19752;18718
+204;Klagenfurt (Land);2;56384;58499
+205;St. Veit/Glan;2;58733;56061
+206;Spittal/Drau;2;81706;78043
+207;Villach (Land);2;64685;64499
+208;Völkermarkt;2;43570;42237
+209;Wolfsberg;2;56607;54024
+210;Feldkirchen;2;30272;30285
+301;Krems an der Donau (Stadt);3;23713;24032
+302;Sankt Pölten (Stadt);3;49117;51955
+303;Waidhofen an der Ybbs (Stadt);3;11662;11455
+304;Wiener Neustadt (Stadt);3;37626;41305
+305;Amstetten;3;109182;112355
+306;Baden;3;126906;139039
+307;Bruck an der Leitha;3;40009;42910
+308;Gänserndorf;3;88472;95841
+309;Gmünd;3;40045;37761
+310;Hollabrunn;3;50062;50301
+311;Horn;3;32397;31429
+312;Korneuburg;3;67981;75281
+313;Krems (Land);3;54409;55874
+314;Lilienfeld;3;27083;26369
+315;Melk;3;75279;76344
+316;Mistelbach;3;72723;73962
+317;Mödling;3;106379;114086
+318;Neunkirchen;3;85769;85460
+319;Sankt Pölten (Land);3;93317;96522
+320;Scheibbs;3;41320;41020
+321;Tulln;3;64600;70963
+322;Waidhofen an der Thaya;3;28192;26738
+323;Wiener Neustadt (Land);3;71907;75064
+324;Wien Umgebung;3;102013;114920
+325;Zwettl;3;45631;43707
+401;Linz (Stadt);4;183614;189889
+402;Steyr (Stadt);4;39339;38205
+403;Wels (Stadt);4;56481;58591
+404;Braunau am Inn;4;95166;97826
+405;Eferding;4;30711;31741
+406;Freistadt;4;63988;65113
+407;Gmunden;4;99331;99403
+408;Grieskirchen;4;61951;62555
+409;Kirchdorf/Krems;4;55161;55557
+410;Linz-Land;4;129036;139116
+411;Perg;4;63944;65738
+412;Ried im Innkreis;4;58186;58553
+413;Rohrbach;4;57811;56688
+414;Schärding;4;56985;56426
+415;Steyr (Land);4;57604;58700
+416;Urfahr-Umgebung;4;77724;81400
+417;Vöcklabruck;4;126585;130316
+418;Wels (Land);4;62990;67945
+501;Salzburg (Stadt);5;142808;145270
+502;Hallein;5;54281;57651
+503;Salzburg Umgebung;5;135100;143081
+504;St. Johann im Pongau;5;77865;78138
+505;Tamsweg;5;21282;20502
+506;Zell am See;5;84118;84424
+601;Graz (Stadt);6;226241;261726
+603;Deutschlandsberg;6;61495;60689
+606;Graz Umgebung;6;131300;143060
+610;Leibnitz;6;75326;77338
+611;Leoben;6;67764;62689
+612;Liezen;6;82225;79367
+614;Murau;6;31467;29186
+616;Voitsberg;6;53588;52063
+617;Weiz;6;86002;87802
+620;Murtal;6;77877;73684
+621;Bruck-Mürzzuschlag;6;107928;101979
+622;Hartberg-Fürstenfeld;6;90767;89420
+623;Südoststeiermark;6;91266;89572
+701;Innsbruck (Stadt);7;113457;119617
+702;Imst;7;52656;56557
+703;Innsbruck (Land);7;154934;166762
+704;Kitzbühel;7;59185;61705
+705;Kufstein;7;93704;101047
+706;Landeck;7;42795;43591
+707;Lienz;7;50395;49319
+708;Reutte;7;31583;31618
+709;Schwaz;7;74834;79103
+801;Bludenz;8;60461;61025
+802;Bregenz;8;121097;126930
+803;Dorbirn;8;75893;82386
+804;Feldkirch;8;93597;100099
+901;Wien 1.,Innere Stadt;9;17056;16374
+902;Wien 2.,Leopoldstadt;9;90922;96113
+903;Wien 3.,Landstrasse;9;81287;84527
+904;Wien 4.,Wieden;9;28357;30700
+905;Wien 5.,Margareten;9;49116;52595
+906;Wien 6.,Mariahilf;9;27873;29375
+907;Wien 7.,Neubau;9;28305;30019
+908;Wien 8.,Josefstadt;9;22582;23529
+909;Wien 9.,Alsergrund;9;37821;39291
+910;Wien 10.,Favoriten;9;150648;177989
+911;Wien 11.,Simmering;9;76901;91087
+912;Wien 12.,Meidling;9;78275;88503
+913;Wien 13.,Hietzing;9;49580;50626
+914;Wien 14.,Penzing;9;78180;84871
+915;Wien 15.,Rudolfsheim-Fünfhaus;9;64898;71286
+916;Wien 16.,Ottakring;9;86149;95694
+917;Wien 17.,Hernals;9;47621;52521
+918;Wien 18.,Währing;9;44997;47627
+919;Wien 19.,Döbling;9;64033;68307
+920;Wien 20.,Brigittenau;9;76267;83356
+921;Wien 21.,Floridsdorf;9;128231;143962
+922;Wien 22.,Donaustadt;9;136446;161419
+923;Wien 23.,Liesing;9;84716;94456

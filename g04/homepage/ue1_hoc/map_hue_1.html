@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<title>Exercise 1</title>
+  <head>
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">  
+        <link rel="stylesheet" href="http://openlayers.org/en/v3.10.1/css/ol.css" type="text/css">
+     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="./stylesheet_hue_1.css">
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="../home.html">Home</a></li>
+          <li><a href="../team/msite.html">Gruppe 4</a></li>
+          <li> <a href="#">Projekte</a>
+
+                <ul>
+                    <li><a href="../projekte/wien/index.html">Erreichbarkeitsanalyse</a>
+                    </li>
+                    <li><a href="../projekte/USA/index.html">USA Census Map</a>
+                    </li>
+
+                </ul>
+            </li>
+         
+        </ul>
+        <ul class="pull-right">
+
+          <li><a href="../intranet/intranet.htm">Intranet</a></li>
+          <li><a href="../feedback/index.html">Feedback</a></li>
+          <li><a href="../impressum/impressum.html">Impressum</a></li>
+
+        </ul>
+      </div>
+    </div>
+      
+<div class="row mapcontent">   
+<div class="col-xs-12 col-sm-6 col-md-6s pull-left">
+    <div class="left">
+    <title>OpenLayers 3 example</title>
+    <div id="map" class="half">
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-6 pull-right">
+    <div class="right">
+    <h3>Exercise 1, Block 3</h3>
+    <p>Die Karte zeigt die jeweiligen Wohnstandorte der Gruppenmitglieder. Die Standorte wurden mittels einer Signatur makiert. Au&szligerdem wurden die Heimat-Bundesl&aumlnder der Gruppenmitmitglieder in generalisierter Form kartiert.</p>
+   
+       <table style="border-collapse:collapse;">
+            <thead>
+                
+                <tr style="border-bottom:1px solid black;">
+                    <th style="padding:5px;">Name </th>
+                    <th style="padding:5px;border-left:1px solid black;">Bundesland</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding:5px;">Domink Linder</td>
+                    <td style="padding:5px;border-left:1px solid black;">K&aumlrnten</td>     
+                </tr>
+                
+                <tr>
+                    <td style="padding:5px;">Matth&aumlus Marte</td>
+                    <td style="padding:5px;border-left:1px solid black;">Vorarlberg</td>
+                </tr>
+                
+                <tr>
+                    <td style="padding:5px;">Lisa Reinhart</td>
+                    <td style="padding:5px;border-left:1px solid black;">Wien</td>
+                </tr>
+            </tbody>
+        </table>
+    
+      </div>
+    </div>
+
+</div>
+      
+<script src="http://openlayers.org/en/v3.10.1/build/ol.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+            new ol.layer.Tile({
+            source: new ol.source.MapQuest({layer: 'sat'})
+          }),
+            new ol.layer.Vector({
+            source: new ol.source.Vector({
+            format: new ol.format.GeoJSON(),
+            url: 'https://gist.githubusercontent.com/anonymous/9394484a55a938449ecd/raw/3a8eb0c788af8cb8a208f2a6ef4fdb9b3f4bf826/map.geojson'
+          })
+        })
+       ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([15, 50]),
+          zoom: 4
+        })
+      });
+    </script>
+  
+
+
+    
+  </body>
+</html>

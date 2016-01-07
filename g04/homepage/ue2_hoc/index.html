@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Feedback</title>
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">  
+    
+     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="./stylesheet_hue_2.css"
+</head>
+<body>
+    
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="../home.html">Home</a></li>
+          <li><a href="../team/msite.html">Gruppe 4</a></li>
+          <li> <a href="#">Projekte</a>
+
+                <ul>
+                    <li><a href="../projekte/wien/index.html">Erreichbarkeitsanalyse</a>
+                    </li>
+                    <li><a href="../projekte/USA/index.html">USA Census Map</a>
+                    </li>
+
+                </ul>
+            </li>
+         
+        </ul>
+        <ul class="pull-right">
+
+          <li><a href="../intranet/intranet.htm">Intranet</a></li>
+          <li><a href="../feedback/index.html">Feedback</a></li>
+          <li><a href="../impressum/impressum.html">Impressum</a></li>
+
+        </ul>
+      </div>
+    </div>
+   <div id="ueberschrift"> <h2>Feedback-Karte mit Formular</h2>
+    </div>
+<div class="row mapcontent"> 
+    <div class="col-xs-12 col-sm-6 col-md-6s pull-left">
+          <div class="left">
+  <div id="map" class="half"></div>
+    </div>
+    </div>
+    
+    
+<div class="col-xs-12 col-sm-6 col-md-6 pull-right">
+ <div class="right">
+  <form id="feedback" method="POST" action="feedback_send.php">
+    <input type="radio" name="geschlecht" value="Frau"/> Frau
+    <input type="radio" name="geschlecht" value="Herr"/> Herr<br/>
+    <table>
+      <tr><td>Name:</td>
+         <td><input type="text" name="name" size="50" /></td>
+        </tr>
+      <tr><td>E-Mail: </td>
+         <td><input type="text" name="email" size="50" /></td>
+      </tr>
+    </table>
+    Feedback: <br />
+    <textarea name="message" rows="10" cols="50"></textarea>
+    <br />
+    <input type="checkbox" name="team" checked="checked" value="ON" />
+           Ich bin Mitglied des geoweb-Teams <br /><br />
+    <input type="submit" value="Abschicken">
+    <input type="reset" value="Zurücksetzen"> <br /><br />
+    Ihr Feedback wird in der Projekt-Datenbank gespeichert.<br /><br />
+    <br />
+  </form>
+    </div> 
+    </div>
+    </div>
+  <script src="index.js" charset="utf-8"></script>
+</body>
+</html>
