@@ -15,6 +15,7 @@ var wmsLayer = new ol.layer.Image({
 
 // Layer
 var ubahn = new ol.layer.Image({
+    zIndex: 5,
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
     params: {'LAYERS': 'g04_2015:UBAHN_linien,g04_2015:UBAHN_haltestellen'}
@@ -22,6 +23,7 @@ var ubahn = new ol.layer.Image({
 });
 
 var fahrradabstellanlagen = new ol.layer.Image({
+    zIndex: 6,
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
     params: {'LAYERS': 'g04_2015:fahrradabstellanlagen'}
@@ -29,6 +31,7 @@ var fahrradabstellanlagen = new ol.layer.Image({
 });
 
 var CITYBIKE_stationen = new ol.layer.Image({
+  zIndex: 8,
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
     params: {'LAYERS': 'g04_2015:CITYBIKE_stationen'}
@@ -36,6 +39,7 @@ var CITYBIKE_stationen = new ol.layer.Image({
 });
 
 var haltestellen_bus_strassenbahn = new ol.layer.Image({
+    zIndex: 7,
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
     params: {'LAYERS': 'g04_2015:haltestellen_bus_strassenbahn'}
@@ -43,6 +47,7 @@ var haltestellen_bus_strassenbahn = new ol.layer.Image({
 });
 
 var SBAHN = new ol.layer.Image({
+    zIndex: 5,
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
     params: {'LAYERS': 'g04_2015:SBAHN_linien,g04_2015:SBAHN_haltestellen'}
@@ -50,20 +55,23 @@ var SBAHN = new ol.layer.Image({
 });
 
 var einzugsber_sbahn_1000m = new ol.layer.Image({
+    zIndex: 3,
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-    params: {'LAYERS': 'g04_2015:einzugsber_sbahn_1000m'}
+    params: {'LAYERS': 'g04_2015:einzugsber_sbahn_1000m,g04_2015:SBAHN_haltestellen'}
   }),
 });
 
 var einzugsber_ubahn = new ol.layer.Image({
+    zIndex: 3,
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-    params: {'LAYERS': 'g04_2015:einzugsber_ubahn'}
+    params: {'LAYERS': 'g04_2015:einzugsber_ubahn,g04_2015:UBAHN_haltestellen'}
   }),
 });
 
 var bezirksgrenzen = new ol.layer.Image({
+     zIndex: 1,
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
     params: {'LAYERS': 'g04_2015:bezirksgrenzen_wien'}
@@ -71,6 +79,7 @@ var bezirksgrenzen = new ol.layer.Image({
 });
 
 var fussgeherzonen = new ol.layer.Image({
+    zIndex: 2,
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
     params: {'LAYERS': 'g04_2015:fusgeherzonen'}
@@ -78,6 +87,7 @@ var fussgeherzonen = new ol.layer.Image({
 });
 
 var verkehrsnutzung = new ol.layer.Image({
+    zIndex: 1,
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
     params: {'LAYERS': 'g04_2015:flaechen_verkehrsnutzung'}
@@ -91,14 +101,22 @@ var comment = new ol.layer.Image({
   }),
 });
 
+var radwege = new ol.layer.Image({
+    zIndex: 4,
+  source: new ol.source.ImageWMS({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+    params: {'LAYERS': 'g04_2015:radwege'}
+  }),
+});
+
 var marker = new ol.Feature();
 // Map object
 var olMap = new ol.Map({
   target: 'map',
   //renderer: 'canvas',
-  layers: [osmLayer,
-           
+  layers: [osmLayer, 
           new ol.layer.Vector({
+          zIndex: 9,
 	      source: new ol.source.Vector({
 		  features: [marker]
 	}),
@@ -129,26 +147,13 @@ function geolocate() {
   geolocation.setTracking(true); // here the browser may ask for confirmation
   geolocation.once('change:accuracyGeometry', function(evt) {
     geolocation.setTracking(false);
-    olMap.getView().fit(geolocation.getAccuracyGeometry(), olMap.getSize(), { nearest: true, maxZoom: 13 });
+    olMap.getView().fit(geolocation.getAccuracyGeometry(), olMap.getSize(), { nearest: true, maxZoom: 16 });
     marker.setGeometry(new ol.geom.Point(olMap.getView().getCenter()));
     console.log("Accuracy of Geometry: " + geolocation.getAccuracy() + " meters"); 
 
   });
 }
 
-
-/**
-// geolocation
-    function geol() {
-  var geolocation = new ol.Geolocation({projection: 'EPSG:3857'});
-  geolocation.setTracking(true); // here the browser may ask for confirmation
-  geolocation.on('change', function() {
-    geolocation.setTracking(false);
-    map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), { nearest: true, maxZoom: 19 });
-    console.log("Accuracy of Geometry: " + geolocation.getAccuracy() + " meters");
-  });
-};
-**/
 
 // Load variables into dropdown
 $.get(function(response) {
@@ -235,6 +240,7 @@ form.onsubmit = function(evt) {
       olMap.getView().fit(ol.proj.transformExtent([parseFloat(bbox[2]),
           parseFloat(bbox[0]), parseFloat(bbox[3]), parseFloat(bbox[1])],
           'EPSG:4326', 'EPSG:3857'), olMap.getSize());
+          marker.setGeometry(new ol.geom.Point(olMap.getView().getCenter()));
     }
   };
   xhr.send();
@@ -386,6 +392,19 @@ document.getElementById('comment').onclick = function(e){
   {
     olMap.removeLayer(comment);
     console.log("Removed Kommentare");
+  }
+};
+
+document.getElementById('radwege').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(radwege);
+    console.log("Added radwege");
+  }
+  else
+  {
+    olMap.removeLayer(radwege);
+    console.log("Removed radwege");
   }
 };
 
