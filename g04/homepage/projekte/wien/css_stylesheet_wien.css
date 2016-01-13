@@ -13,8 +13,9 @@
         position: absolute;
         z-index: 1;
         left: 20px;
-        bottom: 150px;
+        bottom: 220px;
         opacity: 0.6;
+          position: absolute;
     }
     .popover {
       max-width: 440px;
@@ -68,11 +69,10 @@
 }
 
 .maptext {
-    padding-left: 30px;
+    padding-left: 40px;
     padding-top: 10px;
-    padding-right: 60px;
-    text-align: justify;
-    border-bottom: solid 1px;
+    padding-right: 80px;
+    padding-bottom: 10px;
 }
 
 
