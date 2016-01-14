@@ -1,5 +1,6 @@
 {
     "jscodehints.detectedExclusions": [
-        "C:/Users/Acer/Desktop/WS0215/geoweb/geoweb_projekt/g04_ue/g04/intranet/sqlbeispiele/map_ol/ol.js"
+        "C:/Users/Acer/Desktop/WS0215/geoweb/geoweb_projekt/g04_ue/g04/intranet/sqlbeispiele/map_ol/ol.js",
+        "C:/Users/Acer/Desktop/WS0215/geoweb/geoweb_projekt/g04_ue/g04/intranet/sqlbeispiele/map_ol/ol-debug.js"
     ]
 }

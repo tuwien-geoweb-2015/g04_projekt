@@ -210,7 +210,7 @@ olMap.on('singleclick', function(evt) {
   feature.setGeometry(new ol.geom.Point(evt.coordinate));
   feature.set('comment', this.comment.value);
   var xml = new ol.format.WFS().writeTransaction([feature], null, null, {
-    featureType: 'comment', featureNS: 'http://g04/2015',
+    featureType: 'feedback', featureNS: 'http://g04/2015',
     gmlOptions: {srsName: 'EPSG:3857'}
   });
   var xhr = new XMLHttpRequest();
@@ -382,7 +382,7 @@ document.getElementById('verkehrsflaeche').onclick = function(e){
   }
 };
 
-document.getElementById('comment').onclick = function(e){
+document.getElementById('kommentar').onclick = function(e){
   if(this.checked == true)
   {
     olMap.addLayer(comment);

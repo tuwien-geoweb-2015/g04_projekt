@@ -14,8 +14,8 @@
   else  
      {$team="geoweb-extern"; 
       $teamflag=0;} 
-echo "schritt1"
 
+echo "schritt1";
   // Daten zusätzlich in Datenbank speichern (siehe auch PhpSql-Abschnitt) 
   // Tabelle feedback muss in Datenbank angelegt sein  
   // (Beispiel-Tabelle siehe geoweb/2013/ifip/ifip_db.sqlite-Datenbank) 
