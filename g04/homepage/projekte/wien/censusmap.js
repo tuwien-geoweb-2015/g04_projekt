@@ -97,7 +97,7 @@ var verkehrsnutzung = new ol.layer.Image({
 var comment = new ol.layer.Image({
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-    params: {'LAYERS': 'g04_2015:comments'}
+    params: {'LAYERS': 'g04_2015:feedback'}
   }),
 });
 

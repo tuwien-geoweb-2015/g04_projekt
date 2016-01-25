@@ -13,7 +13,7 @@
         position: absolute;
         z-index: 1;
         left: 20px;
-        bottom: 400px;
+        bottom: 550px;
         opacity: 0.6;
           position: absolute;
     }
@@ -73,6 +73,7 @@
     padding-top: 10px;
     padding-right: 80px;
     padding-bottom: 10px;
+    text-align: justify;
 }
 
 
